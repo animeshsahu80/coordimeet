@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Roboto } from "next/font/google";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import {
   ClerkProvider,
   SignInButton,
