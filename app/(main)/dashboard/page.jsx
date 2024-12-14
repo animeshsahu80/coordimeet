@@ -33,10 +33,10 @@ const Dashboard = () => {
   const { loading, error, fn: fnUpdateUserName } = useFetch(updateUsername);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      
-      setOrigin(window.location.origin);
-    }
+    // if (typeof window !== "undefined") {
+
+    //   setOrigin(window.location.origin);
+    // }
     form.setValue("username", user?.username);
   }, [isLoaded]);
 
