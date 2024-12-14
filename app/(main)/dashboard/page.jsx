@@ -30,17 +30,14 @@ const Dashboard = () => {
     },
   });
 
-  const { loading, error, fn:fnUpdateUserName } = useFetch(updateUsername);
+  const { loading, error, fn: fnUpdateUserName } = useFetch(updateUsername);
 
   useEffect(() => {
     form.setValue("username", user?.username);
   }, [isLoaded]);
-  
-  
+
   async function onSubmit(values) {
-    console.log(values);
     await fnUpdateUserName(updateUsername(values?.username));
-    console.log(error)
   }
 
   return (
@@ -66,18 +63,20 @@ const Dashboard = () => {
                   <FormItem>
                     <div>
                       <span className="flex items-center gap-4">
-                        {/* {window?.location?.origin}/ */}
+                        {window?.location?.origin}/
                         <FormControl>
                           <Input placeholder="username" {...field} />
                         </FormControl>
                       </span>
                     </div>
-                    <FormMessage /> 
-                    {error && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {error?.message}
-                      </p>
-                    )} 
+                    <FormMessage />
+                    {error &&
+                      error.message !==
+                        "Cannot read properties of undefined (reading 'workers')" && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {error?.message}
+                        </p>
+                      )}
                   </FormItem>
                 )}
               />

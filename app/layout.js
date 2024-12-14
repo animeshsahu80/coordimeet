@@ -9,6 +9,8 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import CreateEventDrawer from "@/components/create-event";
+import { Toaster } from "@/components/ui/toaster";
 const roboto = Roboto({
   weight: ["300", "100"], // Specify font weights you need
   subsets: ["latin"], // Specify subsets (e.g., latin, cyrillic, etc.)
@@ -27,12 +29,16 @@ export default function RootLayout({ children }) {
 
         <main className="min-h-screen bg-gradient-to-b from-green-200 to-white">
           {children}
+
         </main>
+        <Toaster />
+
         <footer className="bg-green-50 py-12">
           <div className="container mx-auto text-center text-gray-500">
             <p>Made by animesh sahu</p>
           </div>
         </footer>
+        <CreateEventDrawer></CreateEventDrawer>
       </body>
     </html>
     </ClerkProvider>

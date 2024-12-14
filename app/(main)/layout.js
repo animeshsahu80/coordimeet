@@ -6,6 +6,7 @@ import { BarLoader } from "react-spinners";
 import { Calendar, BarChart, Users, Clock } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // For active link detection
+import { Toaster } from "@/components/ui/toaster";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: BarChart },
@@ -48,7 +49,7 @@ const Applayout = ({ children }) => {
         <main className="flex-1 bg-gray-50 p-8 overflow-y-auto ">
             <header className="mb-8">
                 <h2 className="text-5xl font-sans font-bold gradient-title">
-                    {navItems.find((item)=>item.href===pathname).label}
+                    {navItems.find((item)=>item.href===pathname)?.label}
                 </h2>
             </header>
         {children}
