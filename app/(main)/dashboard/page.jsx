@@ -33,13 +33,18 @@ const Dashboard = () => {
   const { loading, error, fn: fnUpdateUserName } = useFetch(updateUsername);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      setOrigin(window.location.origin);
+    }
     form.setValue("username", user?.username);
   }, [isLoaded]);
 
   async function onSubmit(values) {
     await fnUpdateUserName(updateUsername(values?.username));
   }
-
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="space-y-8">
       <Card>

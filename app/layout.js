@@ -11,6 +11,7 @@ import {
 } from "@clerk/nextjs";
 import CreateEventDrawer from "@/components/create-event";
 import { Toaster } from "@/components/ui/toaster";
+import { Suspense } from "react";
 const roboto = Roboto({
   weight: ["300", "100"], // Specify font weights you need
   subsets: ["latin"], // Specify subsets (e.g., latin, cyrillic, etc.)
@@ -35,10 +36,14 @@ export default function RootLayout({ children }) {
 
         <footer className="bg-green-50 py-12">
           <div className="container mx-auto text-center text-gray-500">
-            <p>Made by animesh sahu</p>
+            <p>Made by animes sahu</p>
           </div>
         </footer>
+        <Suspense fallback={<div>Loading...</div>}>
+
         <CreateEventDrawer></CreateEventDrawer>
+        </Suspense>
+
       </body>
     </html>
     </ClerkProvider>
