@@ -34,6 +34,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      
       setOrigin(window.location.origin);
     }
     form.setValue("username", user?.username);
