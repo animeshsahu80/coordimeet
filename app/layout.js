@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
 
         <footer className="bg-green-50 py-12">
           <div className="container mx-auto text-center text-gray-500">
-            <p>Made by animes sahu</p>
+            <p>Product by animesh sahu</p>
           </div>
         </footer>
         <Suspense fallback={<div>Loading...</div>}>
